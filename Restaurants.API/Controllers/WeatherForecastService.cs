@@ -10,6 +10,11 @@
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        public IEnumerable<WeatherForecast> Get()
+        {
+            throw new NotImplementedException();
+        }
+
         /*
         public IEnumerable<WeatherForecast> Get(int count, int minTemperature, int maxTemperature)
         {

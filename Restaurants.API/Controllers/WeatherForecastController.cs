@@ -32,9 +32,8 @@ public class WeatherForecastController : ControllerBase
                 " the min value" );
         }
 
-        var result = _weatherForecastService.Get1(count, request.Min, request.Max);
+        var result = _weatherForecastService.Get();//(count, request.Min, request.Max);
         return Ok(result);
-
 
     }
 
