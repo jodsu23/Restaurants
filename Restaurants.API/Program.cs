@@ -9,9 +9,12 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 
+
 //Esta config video 23 esta en ServiceCollectionExtensions.cs
 //builder.Services.AddDbContext<RestaurantsDbContext>();
-builder.Services.AddInfrastructure();
+//builder.Services.AddInfrastructure();
+//builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("RestaurantsDb"));
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
