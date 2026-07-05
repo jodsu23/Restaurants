@@ -1,4 +1,5 @@
 using Restaurants.API.Controllers;
+using Restaurants.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
+
+//Esta config video 23 esta en ServiceCollectionExtensions.cs
+//builder.Services.AddDbContext<RestaurantsDbContext>();
+builder.Services.AddInfrastructure();
 
 var app = builder.Build();
 
