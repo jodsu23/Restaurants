@@ -1,13 +1,3 @@
 @Restaurants.API_HostAddress = https://localhost:7075
 
-
-GET {{Restaurants.API_HostAddress}}/api/weatherforecast/23/example?max=15
-
-###
-
-POST {{Restaurants.API_HostAddress}}/api/weatherforecast
-Content-Type: application/json
-
-"Canela"
-
-###
+GET {{Restaurants.API_HostAddress}}/api/restaurants
