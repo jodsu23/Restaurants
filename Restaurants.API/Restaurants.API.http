@@ -1,3 +1,21 @@
 @Restaurants.API_HostAddress = https://localhost:7075
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/1
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/by-name/KFC
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants
+
+###
