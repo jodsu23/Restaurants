@@ -2,13 +2,14 @@
 using Restaurants.Application.Restaurants.Dtos;
 using System.Runtime.CompilerServices;
 
-namespace Restaurants.Application.Validators;
+namespace Restaurants.Application.Restaurants.Commands.CreateRestaurant;
 
-public class CreateRestaurantDtoValidator : AbstractValidator<CreateRestaurantDto>
+//public class CreateRestaurantDtoValidator : AbstractValidator<CreateRestaurantDto>
+public class CreateRestaurantCommandValidator : AbstractValidator<CreateRestaurantCommand>
 {
     private readonly List<string> validCategory = ["Italian", "Mexican", "Japanese", "American", "Indian"];
 
-    public CreateRestaurantDtoValidator()
+    public CreateRestaurantCommandValidator()
     {
         
 

@@ -50,7 +50,7 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-    "Name": "Indian Cusine",
+    "Name": "American Cusine",
     "Description": "A culinary experience like no other",
     "Category": "Indian",
     "HasDelivery": true,
@@ -60,3 +60,23 @@ Content-Type: application/json
     "Street": "456 Gourmet Avenue",
     "PostalCode": "10-010"
 }
+GET {{Restaurants.API_HostAddress}}/api/restaurants
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+    "Name": "American Cusine",
+    "Description": "A culinary experience like no other",
+    "Category": "Indian",
+    "HasDelivery": true,
+    "ContactEmail": "info@gourmetdelights.com",
+    "ContactNumber": "555-123-4567",
+    "City": "Metropolis",
+    "Street": "456 Gourmet Avenue",
+    "PostalCode": "10-010"
+}
+
+###
