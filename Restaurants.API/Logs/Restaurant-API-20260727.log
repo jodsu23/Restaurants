@@ -1,0 +1,51 @@
+2026-07-27 18:20:14.106 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-07-27 18:20:14.261 -03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2026-07-27 18:20:14.280 -03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-27 18:20:14.928 -03:00 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-27 18:20:15.216 -03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-07-27 18:20:43.291 -03:00 [INF] Getting restaurant 4002
+2026-07-27 18:20:43.614 -03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__id_0='4002'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]
+2026-07-27 18:48:18.572 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-07-27 18:48:18.677 -03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2026-07-27 18:48:18.690 -03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-27 18:48:19.182 -03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-27 18:48:19.376 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-07-27 18:48:42.205 -03:00 [INF] Getting restaurant 3002
+2026-07-27 18:48:42.471 -03:00 [INF] Executed DbCommand (37ms) [Parameters=[@__id_0='3002'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]
+{"@t":"2026-07-27T21:52:05.4103352Z","@mt":"Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.","@l":"Warning","EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+{"@t":"2026-07-27T21:52:05.5275110Z","@mt":"The entity type '{entityType}' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.","@l":"Warning","entityType":"Address","EventId":{"Id":20606,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.OptionalDependentWithoutIdentifyingPropertyWarning"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+{"@t":"2026-07-27T21:52:05.5444331Z","@mt":"No store type was specified for the decimal property '{property}' on entity type '{entityType}'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.","@l":"Warning","property":"Price","entityType":"Dish","EventId":{"Id":30000,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.DecimalTypeDefaultWarning"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+{"@t":"2026-07-27T21:52:05.9949882Z","@mt":"Executed DbCommand ({elapsed}ms) [Parameters=[{parameters}], CommandType='{commandType}', CommandTimeout='{commandTimeout}']{newLine}{commandText}","elapsed":"41","parameters":"","commandType":"Text","commandTimeout":30,"newLine":"\r\n","commandText":"SELECT 1","EventId":{"Id":20101,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command"}
+{"@t":"2026-07-27T21:52:06.2728194Z","@mt":"Executed DbCommand ({elapsed}ms) [Parameters=[{parameters}], CommandType='{commandType}', CommandTimeout='{commandTimeout}']{newLine}{commandText}","elapsed":"14","parameters":"","commandType":"Text","commandTimeout":30,"newLine":"\r\n","commandText":"SELECT CASE\r\n    WHEN EXISTS (\r\n        SELECT 1\r\n        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)\r\n    ELSE CAST(0 AS bit)\r\nEND","EventId":{"Id":20101,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command"}
+{"@t":"2026-07-27T21:52:15.0386520Z","@mt":"Getting restaurant {RestaurantID}","@tr":"3c4180e0bc83e6b928387f6535c6d687","@sp":"ffeb60aaccc8df47","RestaurantID":3002,"SourceContext":"Restaurants.Application.Restaurants.Queries.GetRestaurantById.GetRestaurantByIdQueryHandler","ActionId":"da294ebb-cc68-4614-a0a3-18ed55798e1c","ActionName":"Restaurants.API.Controllers.RestaurantsController.GetById (Restaurants.API)","RequestId":"0HNNC556L5CHG:00000001","RequestPath":"/api/restaurants/3002","ConnectionId":"0HNNC556L5CHG"}
+{"@t":"2026-07-27T21:52:15.2936032Z","@mt":"Executed DbCommand ({elapsed}ms) [Parameters=[{parameters}], CommandType='{commandType}', CommandTimeout='{commandTimeout}']{newLine}{commandText}","@tr":"3c4180e0bc83e6b928387f6535c6d687","@sp":"ffeb60aaccc8df47","elapsed":"37","parameters":"@__id_0='3002'","commandType":"Text","commandTimeout":30,"newLine":"\r\n","commandText":"SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]\r\nFROM (\r\n    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]\r\n    FROM [Restaurants] AS [r]\r\n    WHERE [r].[Id] = @__id_0\r\n) AS [t]\r\nLEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]\r\nORDER BY [t].[Id]","EventId":{"Id":20101,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command","ActionId":"da294ebb-cc68-4614-a0a3-18ed55798e1c","ActionName":"Restaurants.API.Controllers.RestaurantsController.GetById (Restaurants.API)","RequestId":"0HNNC556L5CHG:00000001","RequestPath":"/api/restaurants/3002","ConnectionId":"0HNNC556L5CHG"}

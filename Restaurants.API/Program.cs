@@ -20,10 +20,11 @@ builder.Services.AddControllers();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Host.UseSerilog((context, configuration) =>
-    configuration
-        .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
-        .MinimumLevel.Override("Microsoft.EntityFrameworkCore", Serilog.Events.LogEventLevel.Information)
-        .WriteTo.Console(outputTemplate: "[{Timestamp:dd-MM HH:mm:ss} {Level:u3}] |{SourceContext}| {Newline} {Message:lj}{NewLine}{Exception}]")
+    configuration.ReadFrom.Configuration(context.Configuration)
+//        .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
+//        .MinimumLevel.Override("Microsoft.EntityFrameworkCore", Serilog.Events.LogEventLevel.Information)
+//        .WriteTo.File("Logs/Restaurant-API-.log", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
+//        .WriteTo.Console(outputTemplate: "[{Timestamp:dd-MM HH:mm:ss} {Level:u3}] |{SourceContext}| {Newline} {Message:lj}{NewLine}{Exception}]")
 );
 
 var app = builder.Build();
