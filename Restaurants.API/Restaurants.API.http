@@ -85,3 +85,14 @@ Content-Type: application/json
 DELETE {{Restaurants.API_HostAddress}}/api/restaurants/3003
 
 ###
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/3002
+Content-Type: application/json
+
+{
+  "Name": "Sample path",
+  "Description": "this is a sample restaurant description.",
+  "HashDelivery": true
+}
+
+###

@@ -41,4 +41,7 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext)
         var restaurant = await dbContext.Restaurants.FirstOrDefaultAsync(x => x.Name.ToLower() == name.ToLower());
         return restaurant!;
     }
+
+    public Task SaveChange()
+        => dbContext.SaveChangesAsync();
 }
