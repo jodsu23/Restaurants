@@ -4,7 +4,7 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/1
+GET {{Restaurants.API_HostAddress}}/api/restaurants/1002
 
 ###
 
@@ -27,10 +27,10 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-    "Name": "Spicy Delights",
+    "Name": "Spicy Delights2",
     "Description": "A culinary experience like no other",
     "Category": "Fine Dining",
-    "HasDelivery": true,
+    "HasDelivery": false,
     "ContactEmail": "info@gourmetdelights.com",
     "ContactNumber": "555-123-4567",
     "City": "Metropolis",
@@ -50,10 +50,10 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-    "Name": "American Cusine",
+    "Name": "American Cusine 2",
     "Description": "A culinary experience like no other",
-    "Category": "Indian",
-    "HasDelivery": true,
+    "Category": "Italian",
+    "HasDelivery": false,
     "ContactEmail": "info@gourmetdelights.com",
     "ContactNumber": "555-123-4567",
     "City": "Metropolis",
@@ -68,10 +68,10 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-    "Name": "American Cusine",
+    "Name": "American Cusine 2",
     "Description": "A culinary experience like no other",
     "Category": "Indian",
-    "HasDelivery": true,
+    "HasDelivery": false,
     "ContactEmail": "info@gourmetdelights.com",
     "ContactNumber": "555-123-4567",
     "City": "Metropolis",
@@ -94,5 +94,9 @@ Content-Type: application/json
   "Description": "this is a sample restaurant description.",
   "HashDelivery": true
 }
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants
 
 ###
