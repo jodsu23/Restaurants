@@ -4,7 +4,7 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/4003
+GET {{Restaurants.API_HostAddress}}/api/restaurants/1002
 
 ###
 
@@ -102,5 +102,18 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/3002
 ###
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants/1002/dishes
+Content-Type: application/json
+
+{
+   "name": "Espaguetti",
+    "description": "Spaguetti con salsa bolognesa",
+    "Price": 6,
+    "KiloCalories": 750
+
+}
 
 ###
