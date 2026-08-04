@@ -109,11 +109,10 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants/1002/dishes
 Content-Type: application/json
 
 {
-   "name": "Raviolis",
-    "description": "Raviolis en salsa pomodoro",
-    "Price": 6,
-    "KiloCalories": 1550
-
+    "name": "ALbondigas",
+    "description": "Albondigas de vaca",
+    "Price": 10,
+    "KiloCalories": 3000
 }
 
 ###
@@ -139,5 +138,11 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}/dishes/nameDi
 ###
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants/1002/dishes/nameDish/Ravialis
+
+###
+
+@restaurantId=0
+@dishId=0
+GET {{Restaurants.API_HostAddress}}/api/restaurants/{{restaurantId}}/dishes/{{dishId}}
 
 ###

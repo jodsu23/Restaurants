@@ -7,6 +7,7 @@ using Restaurants.Application.Dishes.Dtos;
 using Restaurants.Application.Dishes.Queries.GetDishByIdForRestaurant;
 using Restaurants.Application.Dishes.Queries.GetDishByNameForRestaurant;
 using Restaurants.Application.Dishes.Queries.GetDishesForRestaurant;
+using Restaurants.Domain.Entities;
 
 namespace Restaurants.API.Controllers;
 
@@ -19,8 +20,9 @@ public class DishesController(IMediator mediator) : Controller
     {
         command.RestaurantId = restaurantId;
 
-        await mediator.Send(command);
-        return Created();
+        //await mediator.Send(command);
+        var dishId = await mediator.Send(command);
+        return CreatedAtAction(nameof(GetByIdForRestaurant), new {restaurantId, dishId }, null);
     }
 
     [HttpGet]
